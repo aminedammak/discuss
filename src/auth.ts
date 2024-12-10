@@ -28,7 +28,7 @@ export const {
     //Usually not needed, here we are fixing a bug in nextauth
     async session({ session, user }: any) {
       if (session && user) {
-        sessionStorage.user.id = user.id;
+        session.user.id = user.id;
       }
       return session;
     },
