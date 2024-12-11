@@ -31,8 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* @ts-expect-error Server Component */}
-
           <Providers>
             <Header />
             {children}

@@ -1,5 +1,5 @@
-'use server';
+"use server";
 
-export async function createComment() {
+export default async function createComment() {
   //TODO: revalidate post show page
 }
