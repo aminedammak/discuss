@@ -8,10 +8,10 @@ export default async function Home() {
 
   return (
     <div>
-      <form action={actions.signIn}>
+      <form onSubmit={(e) => { e.preventDefault(); actions.signIn(); }}>
         <Button type="submit">Sign in</Button>
       </form>
-      <form action={actions.signOut}>
+      <form onSubmit={async (e) => { e.preventDefault(); await actions.signOut(); }}>
         <Button type="submit">Sign out</Button>
       </form>
 
