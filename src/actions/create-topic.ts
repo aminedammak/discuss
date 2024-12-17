@@ -53,7 +53,7 @@ export async function createTopic(
     };
   }
 
-  let topic;
+  let topic: Topic;
 
   try {
     topic = await db.topic.create({
