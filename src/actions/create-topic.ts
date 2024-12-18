@@ -30,8 +30,8 @@ export async function createTopic(
   formState: CreateTopicFormState,
   formData: FormData
 ): Promise<CreateTopicFormState> {
-  const name = formData.get("name");
-  const description = formData.get("description");
+  const name = formData.get('name');
+  const description = formData.get('description');
 
   const result = createTopicSchema.safeParse({
     name,
@@ -48,7 +48,7 @@ export async function createTopic(
   if (!session || !session.user) {
     return {
       errors: {
-        _form: ["You must be signed to do this."],
+        _form: ['You must be signed to do this.'],
       },
     };
   }
@@ -72,11 +72,11 @@ export async function createTopic(
     } else {
       return {
         errors: {
-          _form: ["Something went wrong"],
+          _form: ['Something went wrong'],
         },
       };
     }
   }
-  revalidatePath("/");
+  revalidatePath('/');
   redirect(paths.topicShow(topic?.slug));
 }
