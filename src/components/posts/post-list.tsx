@@ -7,9 +7,9 @@ interface PostListProps {
   fetchPosts: () => Promise<PostWithData>[];
 }
 
-// TODO: Get list of posts into this component somehow
 export default async function PostList({ fetchPosts }: PostListProps) {
   const posts = await fetchPosts();
+  console.log('posssssssts list', posts);
   const renderedPosts = posts.map((post) => {
     const topicSlug = post.topic.slug;
 

@@ -8,14 +8,18 @@ export type PostWithData = Post & {
 };
 
 export function fetchPostsByTopicSlug(slug: string): Promise<PostWithData>[] {
-  return db.post.findMany({
-    where: {
-      topic: { slug },
-    },
-    include: {
-      topic: { select: { slug: true } },
-      user: { select: { name: true } },
-      _count: { select: { comments: true } },
-    },
-  });
+    console.log('ccccccccc');
+
+    const result = db.post.findMany({
+      where: {
+        topic: { slug },
+      },
+      include: {
+        topic: { select: { slug: true } },
+        user: { select: { name: true } },
+        _count: { select: { comments: true } },
+      },
+    });
+  console.log('rrrrrrrr', result);
+  return result;
 }
